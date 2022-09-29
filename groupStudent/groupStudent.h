@@ -198,5 +198,5 @@ public:
 
 	friend ostream& operator<<(ostream& os, const GroupStudents& gr);
 	//friend istream& operator<<(istream& is, GroupStudents& gr);
-	friend void operator<<(istream& is, GroupStudents& gr);
+	friend void operator>>(istream& is, GroupStudents& gr);
 };

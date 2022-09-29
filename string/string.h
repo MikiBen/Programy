@@ -7,7 +7,10 @@ private:
 	string word;
 
 public:
-	String() {}
+	String() 
+	{ 
+		this->word = "";
+	}
 	String(const String& str) {
 
 		this->word = str.word;
@@ -24,8 +27,16 @@ public:
 
 		return *this;
 	}
+	
+	//overloading +
+	String& operator+(const String& str)
+	{
+		this->word = this->word + " " + str.word;
 
-	void setString(string str)
+		return *this;
+	}
+
+	void setString(const string str)
 	{
 		word = str;
 	}
@@ -35,4 +46,6 @@ public:
 		return word;
 	}
 
+	friend ostream& operator<<(ostream& os, const String& s);
+	friend istream& operator>>(istream& is, String& s);
 };

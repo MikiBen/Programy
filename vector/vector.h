@@ -9,7 +9,6 @@ class Vector
 public:
 	vector <int> arr;
 
-public:
 	Vector() {}
 	Vector(const Vector& p1)
 	{
@@ -80,7 +79,7 @@ public:
 		return true;
 	}
 
-	void addElement(int number)
+	void addElement(const int number)
 	{
 		arr.push_back(number);
 	}
@@ -106,5 +105,5 @@ public:
 	}
 
 	friend ostream& operator<<(ostream& os, const Vector& v);
-	friend istream& operator<<(istream& is, Vector& v);
+	friend istream& operator>>(istream& is, Vector& v);
 };

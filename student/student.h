@@ -67,5 +67,5 @@ public:
 	int getPhoneNumber() { return phoneNumber; }
 
 	friend ostream& operator<<(ostream& os, const Student& s);
-	friend istream& operator<<(istream& is, Student& s);
+	friend istream& operator>>(istream& is, Student& s);
 };
