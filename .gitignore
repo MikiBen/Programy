@@ -1,0 +1,6 @@
+.vs
+x64
+output.txt
+*.exe
+*.o
+OOP.cpp
