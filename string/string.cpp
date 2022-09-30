@@ -3,12 +3,12 @@
 
 using namespace std;
 
-ostream& operator<<(ostream& os, const String& s)
+ostream& String::operator<<(ostream& os, const String& s)
 {
     os << s.word;
     return os;
 }
-istream& operator>>(istream& is, String& s)
+istream& String::operator>>(istream& is, String& s)
 {
     string line;
     cout << "Enter the string: \n";
@@ -20,10 +20,12 @@ istream& operator>>(istream& is, String& s)
 
 int main()
 {
-    String A,B,C;
+    String::String A;
+    String::String B;
+    String::String C;
 
-    A.setString("Pierwszt");
-    B.setString("Drugi");
+    A.setString("first");
+    B.setString("Second");
     cout << " String A: " << A.getString()<<endl;
    
     C = A + B;

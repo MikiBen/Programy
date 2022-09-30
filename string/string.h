@@ -1,51 +1,55 @@
 #pragma once
 
 using namespace std;
-class String
+
+namespace String
 {
-private:
-	string word;
-
-public:
-	String() 
-	{ 
-		this->word = "";
-	}
-	String(const String& str) {
-
-		this->word = str.word;
-	}
-
-	//overloading -=
-	String& operator-=(const String& str)
+	class String
 	{
-		int location;
-		location = this->word.find(str.word);
+	private:
+		string word;
 
-		if (location >= 0)
-			this->word.erase(location, str.word.size());
+	public:
+		String()
+		{
+			this->word = "";
+		}
+		String(const String& str) {
 
-		return *this;
-	}
-	
-	//overloading +
-	String& operator+(const String& str)
-	{
-		this->word = this->word + " " + str.word;
+			this->word = str.word;
+		}
 
-		return *this;
-	}
+		//overloading -=
+		String& operator-=(const String& str)
+		{
+			int location;
+			location = this->word.find(str.word);
 
-	void setString(const string str)
-	{
-		word = str;
-	}
+			if (location >= 0)
+				this->word.erase(location, str.word.size());
 
-	string getString()
-	{
-		return word;
-	}
+			return *this;
+		}
 
-	friend ostream& operator<<(ostream& os, const String& s);
-	friend istream& operator>>(istream& is, String& s);
-};
+		//overloading +
+		String& operator+(const String& str)
+		{
+			this->word = this->word + " " + str.word;
+
+			return *this;
+		}
+
+		void setString(const string str)
+		{
+			word = str;
+		}
+
+		string getString()
+		{
+			return word;
+		}
+
+		friend ostream& operator<<(ostream& os, const String& s);
+		friend istream& operator>>(istream& is, String& s);
+	};
+}

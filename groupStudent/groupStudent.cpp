@@ -4,7 +4,7 @@
 using namespace std;
 
 //overloading <<
-ostream& operator<<(ostream& os,  GroupStudents& gr)
+ostream& GroupOfStudents::operator<<(ostream& os, GroupStudents& gr)
 {
     for(auto i=0;  i< gr.group.size();i++)
     {
@@ -18,7 +18,7 @@ ostream& operator<<(ostream& os,  GroupStudents& gr)
 }
 
 //overloading >>
-void operator>>(istream& is, GroupStudents& gr)
+void GroupOfStudents::operator>>(istream& is, GroupStudents& gr)
 {
     gr.add_Student_to_gruop();
 }
@@ -26,22 +26,22 @@ void operator>>(istream& is, GroupStudents& gr)
 int main()
 {
     try {
-        GroupStudents A("John", "Male", 23, 888);
+        GroupOfStudents::GroupStudents A("John", "Male", 23, 888);
         A.add_Student_to_gruop("Marta", "Female", 33, 987987);
 
-        GroupStudents B = A;
+        GroupOfStudents::GroupStudents B = A;
 
         cout << "Group A: " << endl;
         A.showAllStudent();
-        cout << endl << "Group B = A: " << endl;
+        //cout << endl << "Group B = A: " << endl;
         B.showAllStudent();
 
-        GroupStudents C("Mike", "Male", 43, 757575);
-        GroupStudents D;
-        C.add_Student_to_gruop("Andrew", "Male", 32, 100000);
-        cout << endl << "Group C: " << endl;
-        C.showAllStudent();
-
+        GroupOfStudents::GroupStudents C("Mike", "Male", 43, 757575);
+        GroupOfStudents::GroupStudents D;
+        //C.add_Student_to_gruop("Andrew", "Male", 32, 100000);
+       // cout << endl << "Group C: " << endl;
+       // C.showAllStudent();
+        
     }
     catch (const char* str)
     {

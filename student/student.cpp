@@ -4,7 +4,7 @@
 using namespace std;
 
 //overloading <<
-ostream& operator<<(ostream& os, const Student& s)
+ostream& StudentOfUniversity::operator<<(ostream& os, const Student& s)
 {
     os << "Name: " << s.name << "\n"
         << "Gender: " << s.gender << "\n"
@@ -14,7 +14,7 @@ ostream& operator<<(ostream& os, const Student& s)
 }
 
 //overloading >>
-istream& operator>>(istream& is, Student& s)
+istream& StudentOfUniversity::operator>>(istream& is, Student& s)
 {
     string name;
     string gender;
@@ -40,8 +40,8 @@ istream& operator>>(istream& is, Student& s)
 
 int main()
 {
-    Student A;
-    Student B;
+    StudentOfUniversity::Student A;
+    StudentOfUniversity::Student B;
 
     A.setName("Mike");
     A.setGender("Male");

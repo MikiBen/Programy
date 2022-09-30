@@ -2,13 +2,14 @@
 #include "date.h"
 
 using namespace std;
+namespace Date = VeryLongDescriptionDate;
 
-ostream& operator<<(ostream& os, const Date& d)
+ostream& Date::operator<<(ostream& os, const Date& d)
 {
     os << d.day << "/" << d.month << "/" << d.year;
     return os;
 }
-istream& operator>>(istream& is, Date& d)
+istream& Date::operator>>(istream& is, Date& d)
 {
     int year;
     int month;
@@ -29,10 +30,10 @@ istream& operator>>(istream& is, Date& d)
 int main()
 {
     bool result;
-    Date A(2003, 1, 7);
+    Date::Date A(2003, 1, 7);
 
-    Date B(2003, 2, 5);
-    Date C;
+    Date::Date B(2003, 2, 5);
+    Date::Date C;
 
     cout << "A: " << A.getDate() << endl;
     cout << "B: " << B.getDate() << endl;

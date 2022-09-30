@@ -3,14 +3,14 @@
 
 using namespace std;
 
-ostream& operator<<(ostream& os, const Vector& v)
+ostream& Vector::operator<<(ostream& os, const Vector& v)
 {
     for (auto i = 0; i < v.arr.size(); i++)
         os << v.arr[i] << ", ";
         
     return os;
 }
-istream& operator>>(istream& is, Vector& v)
+istream& Vector::operator>>(istream& is, Vector& v)
 {
     int value;
 
@@ -23,9 +23,9 @@ istream& operator>>(istream& is, Vector& v)
 
 int main()
 {
-    Vector A;
-    Vector B;
-    Vector C;
+    Vector::Vector A;
+    Vector::Vector B;
+    Vector::Vector C;
     A.addElement(10);
     A.addElement(11);
     A.addElement(14);
