@@ -159,4 +159,4 @@ inline Matrix<T> operator/(const Matrix<T>& m,const Matrix<T>& m2)
 	return newMatrix;
 }
 
-#endif /* __FRACTION_H__ */
+#endif /* __MATRIX_H__ */

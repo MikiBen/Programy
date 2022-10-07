@@ -3,41 +3,6 @@
 
 using namespace std;
 
-//overloading <<
-ostream& StudentOfUniversity::operator<<(ostream& os, const Student& s)
-{
-    os << "Name: " << s.name << "\n"
-        << "Gender: " << s.gender << "\n"
-        << "Age: " << s.age << "\n"
-        << "Phone Number: " << s.phoneNumber<< "\n";
-    return os;
-}
-
-//overloading >>
-istream& StudentOfUniversity::operator>>(istream& is, Student& s)
-{
-    string name;
-    string gender;
-    int age;
-    int phoneNumber;
-
-    cout << "Enter name: ";
-    is >> name;
-    cout << "Enter gender: ";
-    is >> gender;
-    cout << "Enter age: ";
-    is >> age;
-    cout << "Enter phone Number: ";
-    is >> phoneNumber;
-
-    s.setName(name);
-    s.setGender(gender);
-    s.setAge(age);
-    s.setPhoneNumber(phoneNumber);
-
-    return is;
-}
-
 int main()
 {
     StudentOfUniversity::Student A;
@@ -60,7 +25,7 @@ int main()
 
     B = A;
 
-    cout << "Student B=A: \n";
+    cout << endl<<"Student B=A: \n";
     cout << B;
 
     cin >> A;
