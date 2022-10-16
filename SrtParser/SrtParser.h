@@ -14,6 +14,7 @@ struct Subtitles
 	string line;
 	bool isIntersecting = false;
 	bool isNested = false;
+	bool isShowHideWrong = false;
 };
 
 class SrtParser
@@ -42,7 +43,8 @@ public:
 			cout << "Time hide: " << AllSubtitles[i].time_hide << endl;
 			cout << "Subtitle: " << AllSubtitles[i].line << endl;
 			cout << "Is subtitle is intersecting: " << AllSubtitles[i].isIntersecting << endl;
-			cout << "Is subtitle is nested: " << AllSubtitles[i].isNested << endl << endl;
+			cout << "Is subtitle is nested: " << AllSubtitles[i].isNested << endl;
+			cout << "Is hide/show time is correct: " << AllSubtitles[i].isShowHideWrong << endl << endl;
 		}
 	}
 
@@ -76,10 +78,18 @@ public:
 		sortByTimeBegin();
 		checkIntersectingSubtitles();
 		checkNestedSubtitles();
+		checkHideShowIsWrong();
 		safeSubtitlesToFile();
 	}
 
 private:
+	void checkHideShowIsWrong()
+	{
+		for (auto i = 0; i < AllSubtitles.size(); i++)
+			if (AllSubtitles[i].time_show >= AllSubtitles[i].time_hide)
+				AllSubtitles[i].isShowHideWrong = true;
+	}
+
 	void safeSubtitlesToFile()
 	{
 		fileOutput.open("output.txt", ios::out | ios::app);
@@ -90,7 +100,8 @@ private:
 			fileOutput << "Time hide: " << AllSubtitles[i].time_hide << endl;
 			fileOutput << "Subtitle: " << AllSubtitles[i].line << endl;
 			fileOutput << "Is subtitle is intersecting: " << AllSubtitles[i].isIntersecting << endl;
-			fileOutput << "Is subtitle is nested: " << AllSubtitles[i].isNested << endl << endl;
+			fileOutput << "Is subtitle is nested: " << AllSubtitles[i].isNested << endl;
+			fileOutput << "Is hide/show time is correct: " << AllSubtitles[i].isShowHideWrong << endl << endl;
 		}
 		file.close();
 	}
