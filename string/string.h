@@ -21,7 +21,7 @@ namespace String
 			size = 0;
 		}
 
-		String(const String& str) 
+		String(const String& str)
 		{
 			size = str.size;
 			if (!size)
@@ -64,7 +64,7 @@ namespace String
 
 			return *this;
 		}
-		
+
 		void setString( const char* str)
 		{
 			int newSize=0;
@@ -81,7 +81,7 @@ namespace String
 				}
 				word[newSize] = NULL;
 		}
-		
+
 		const char* getString()
 		{
 			return word;
@@ -116,7 +116,7 @@ istream& String::operator>>(istream& is, String& s)
 	for (int i = 0; i < line.size(); i++) {
 		newWord[i] = line[i];
 	}
-		
+
 	newWord[line.size()] = NULL;
 	s.setString(newWord);
 	delete[] newWord;

@@ -152,7 +152,7 @@ inline Matrix<T> operator/(const Matrix<T>& m,const Matrix<T>& m2)
 
 	for (auto i = 0; i < m.row * m.column; i++)
 	{
-		if(m2.matrix[i] == 0) 
+		if(m2.matrix[i] == 0)
 			throw "Divide by Zero";
 		newMatrix.matrix[i] =  (m.matrix[i]+1 )/ m2.matrix[i];
 	}

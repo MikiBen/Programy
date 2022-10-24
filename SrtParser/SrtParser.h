@@ -64,7 +64,7 @@ public:
 					setTime(line);
 					getline(file, line);
 
-					while(checkEmptyLine(line))
+					while (checkEmptyLine(line))
 					{
 						subtitles.line = subtitles.line + line + " ";
 						getline(file, line);
@@ -130,7 +130,7 @@ private:
 		subtitles.time_hide = timeEnd(line);
 	}
 
-	void removeSign(string &line, const char sign)
+	void removeSign(string& line, const char sign)
 	{
 		while (line.find_first_of(sign) != -1)
 		{
@@ -142,7 +142,7 @@ private:
 	{
 		while (line.find_first_of(",") != -1)
 		{
-			line.replace(line.find_first_of(","), 1,".");
+			line.replace(line.find_first_of(","), 1, ".");
 		}
 	}
 
@@ -154,7 +154,7 @@ private:
 
 	double timeEnd(string line)
 	{
-		line = line.substr(line.find_first_of(">")+1, line.size());
+		line = line.substr(line.find_first_of(">") + 1, line.size());
 		return stringToDouble(line);
 	}
 
@@ -168,7 +168,7 @@ private:
 	void sortByTimeBegin()
 	{
 		sort(AllSubtitles.begin(), AllSubtitles.end(),
-		[](const Subtitles a, const Subtitles b)
+			[](const Subtitles a, const Subtitles b)
 			{
 				return a.time_show < b.time_show;
 			});
@@ -177,10 +177,10 @@ private:
 	void checkIntersectingSubtitles()
 	{
 		int j;
-		for(auto i =0 ; i< AllSubtitles.size()-1; i++)
+		for (auto i = 0; i < AllSubtitles.size() - 1; i++)
 		{
-			 j = 1;
-			while (compareTime(i,j))
+			j = 1;
+			while (compareTime(i, j))
 			{
 				AllSubtitles[i + j].isIntersecting = true;
 				j++;
@@ -192,7 +192,7 @@ private:
 	{
 		if (i + j >= AllSubtitles.size()) return false;
 		if (AllSubtitles[i].time_hide > AllSubtitles[i + j].time_show &&
-			AllSubtitles[i].time_hide < AllSubtitles[i+j].time_hide)
+			AllSubtitles[i].time_hide < AllSubtitles[i + j].time_hide)
 			return true;
 		else return false;
 	}
@@ -215,7 +215,7 @@ private:
 	{
 		if (i + j >= AllSubtitles.size()) return false;
 		if ((AllSubtitles[i].time_show < AllSubtitles[i + j].time_show) &&
-			(AllSubtitles[i].time_hide > AllSubtitles[i+j].time_hide))
+			(AllSubtitles[i].time_hide > AllSubtitles[i + j].time_hide))
 			return true;
 		else return false;
 	}

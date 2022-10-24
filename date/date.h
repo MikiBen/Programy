@@ -1,8 +1,8 @@
 #pragma once
 #pragma warning(disable : 4996)
 
-#include <ctime> 
-#include <conio.h>      
+#include <ctime>
+#include <conio.h>
 #include <iostream>
 #include <string>
 

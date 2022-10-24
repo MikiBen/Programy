@@ -41,7 +41,7 @@ int main()
         //C.add_Student_to_gruop("Andrew", "Male", 32, 100000);
        // cout << endl << "Group C: " << endl;
        // C.showAllStudent();
-        
+
     }
     catch (const char* str)
     {

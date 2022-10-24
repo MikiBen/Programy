@@ -37,7 +37,7 @@ namespace Vector
 			if (data != nullptr)
 				delete[] data;
 		}
-		
+
 		//overloading +=
 		Vector& operator+=(const Vector& v)
 		{
@@ -128,7 +128,7 @@ namespace Vector
 			else return false;
 			return true;
 		}
-		
+
 		void addElement(const int number)
 		{
 			if (!size)

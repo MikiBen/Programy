@@ -5,3 +5,5 @@ output.txt
 *.o
 OOP.cpp
 Debug
+SrtParserTest
+SrtParser_v2
